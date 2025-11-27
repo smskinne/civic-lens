@@ -1,10 +1,45 @@
-/* CSS by ///ADD/// YOUR NAME */
+/* CSS by Shaun Skinner*/
 
 /* Imported Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
-/* ///ADD/// CSS Reset */
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.6;
+  font-family: sans-serif;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 /* Root Variables */
 :root {
@@ -39,27 +74,351 @@ body.dark-mode {
 }
 
 /* ///ADD/// Skip Link Styles */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
 
 /* ///ADD/// Navigation Styles */
+header {
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  font-family: var(--font-body);
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 
+header h1 {
+  font-family: var(--font-heading);
+  font-weight: lighter;
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+header .tagline {
+  font-weight: bold;
+  font-family: var(--font-heading);
+}
+
+header p {
+  margin-bottom: 1rem;
+}
+
+header li{
+  background-color: var(--news-flash);
+  padding: 0.5rem 1rem;
+  margin: 0.25rem 0 0.25rem; 
+  text-align: center;
+}
+
+/* Mobile Navigation */
+.menu-button {
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+}
+
+.menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+}
+
+#menu-toggle:checked ~ .menu {
+  max-height: 500px;
+}
 /* ///ADD/// Global Layout Styles */
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
 
+main .tagline {
+  font-style: italic;
+  font-family: var(--font-heading);
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+#federal-investigation, #voter-suppression {
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  box-shadow: var(--shadow);
+}
+
+#federal-investigation h2, #voter-suppression h2 {
+  border-bottom: 1.5px solid var(--watchdog-white);
+}
+
+#federal-investigation p, #voter-suppression p{
+  margin-top: 0.5rem;
+}
+
+#featured-articles a{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--story-subtitle);
+  box-shadow: var(--shadow);
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 1rem;
+}
+
+#featured-articles a:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.7);
+}
+
+#featured-articles h3 {
+  border-bottom: 1px solid var(--story-subtitle);
+}
+
+#alerts form{
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  padding-bottom: 1.5rem;
+}
+#alerts form fieldset {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--blue-bulletin);
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+#alerts form fieldset label{
+  margin-bottom: 0.5rem;
+}
+
+#alerts form input {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+
+}
+
+#alerts form button {
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+}
+
+#social {
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  padding: 1rem;
+  padding-top: 2rem;
+}
+
+#social a{
+  background-color: var(--news-flash);
+  padding: 0.75rem;
+  margin: 0.5rem;
+  display: inline-block;
+}
+#social p{
+  margin-top: 1rem;
+  text-align: center;
+}
 /* ///ADD/// Global Text Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: normal;
+}
+h2 {
+  font-size: 1.5rem;
+
+}
+
+main {
+  font-family: var(--font-body);
+
+
+}
+
+
 
 
 /* ///ADD/// medium styles 620px */
 
+@media (min-width: 620px) {
+  .menu-button { 
+    display: none; 
+  }
+  .menu { 
+    display: flex; 
+    gap: 1rem; 
+    position: static; 
+    box-shadow: none;
+    max-height: none;
+    overflow: visible;
+  }
+
+  main { 
+    padding: 2.5rem; 
+  }
+  #breaking-news {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 0.5rem;
+
+  }
+  #breaking-news h2 {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+  }
+  #breaking-news #federal-investigation {
+    grid-column: 1 / 1;
+    grid-row: 2 / 2;
+  }
+  
+  #breaking-news #voter-suppression {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 / 2;
+    grid-row: 2 / 2;
+  }
+
+  #featured-articles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  #featured-articles h2 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / 1;
+  }
+
+  #alerts form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 0.5rem;
+  }
+  #alerts #alerts-name-label {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+  }
+  #alerts #mobile-label {
+    grid-column: 2 / 2;
+    grid-row: 1 / 1;
+  }
+  #alerts #name {
+    grid-column: 1 / 1;
+    grid-row: 2 / 2;
+  }
+  #alerts #mobile {
+    grid-column: 2 / 2;
+    grid-row: 2 / 2;
+  }
+  #alerts fieldset {
+    grid-column: 1 / span 2;
+    grid-row: 3 / 3;
+    display: flex;
+    flex-direction: row;
+  }
+
+  #alerts button {
+    grid-column: 1 / span 2;
+    grid-row: 4 / 4;
+  }
+}
+
 
 /* ///ADD/// large styles 920px */
+
+@media (min-width: 920px) {
+  #featured-articles {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  #featured-articles h2 {
+    grid-column: 1 / span 3;
+  }
+}
 
 
 /* ///ADD/// x-large styles 1024px */
 
+@media (min-width: 1024px) {
+   #featured-articles {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  #featured-articles h2 {
+    grid-column: 1 / span 4;
+  }
+}
 
-/* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
 
 
-/* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
-@supports (selector(:has(*))) {
+
+
+/* Color scheme preference */
+@media (prefers-color-scheme: dark) {
+  body:not(.light-mode):not(.dark-mode) {
+    background-color: var(--truth-text);
+    color: var(--watchdog-white);
+  }
 
 }
+
+@media (prefers-color-scheme: light) {
+  body:not(.light-mode):not(.dark-mode) {
+    background-color: var(--watchdog-white);
+    color: var(--truth-text);
+  }
+}
+
+/* Reduce motion preference*/
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* :has() support selector */
+@supports (selector(:has(*))) {
+  .mobile-nav:has(#menu-toggle:checked) .menu-button {
+    background-color: #be2f3b;
+  }
+}
+
+
+
